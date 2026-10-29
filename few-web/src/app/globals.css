@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #fff9f0;
+  --color-blush: #fff1f5;
+  --color-blush-deep: #fde3eb;
+  --color-rose: #f4b8c9;
+  --color-ink: #3b2314;
+  --color-saffron: #e8a33d;
+  --color-leaf: #5b9a4b;
+  --color-berry: #d9668a;
+  --color-sky: #7fb8d9;
+  --color-lavender: #b9a3e0;
+  --color-leaf-soft: #e7f4e3;
+  --color-berry-soft: #fde8ef;
+  --color-sky-soft: #e5f3fa;
+  --color-lavender-soft: #f3eefb;
+  --color-saffron-soft: #fff3de;
+  --color-okay-fg: #0b6b32;
+  --color-okay-bg: #e7f6ec;
+  --color-change-fg: #6b4a00;
+  --color-change-bg: #fff1d6;
+  --color-limit-fg: #0c447c;
+  --color-limit-bg: #e7f2fb;
+  --color-avoid-fg: #8e1b1b;
+  --color-avoid-bg: #fdecec;
+  --font-display: var(--font-poppins), "Poppins", sans-serif;
+  --font-body: var(--font-nunito), "Nunito Sans", sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background: #fff1f5;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+:focus-visible {
+  outline: 3px solid #3b2314;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 50;
+  transform: translateY(-150%);
+  border-radius: 999px;
+  background: #fff1f5;
+  color: #3b2314;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+@keyframes few-flutter {
+  0%,
+  100% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+}
+
+.few-wing {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.few-flutter .few-wing-left {
+  animation: few-flutter 1.8s ease-in-out infinite;
+}
+
+.few-flutter .few-wing-right {
+  animation: few-flutter 1.8s ease-in-out infinite reverse;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .few-flutter .few-wing-left,
+  .few-flutter .few-wing-right {
+    animation: none;
+  }
+}
+
+@media print {
+  body,
+  .app-scroll {
+    height: auto;
+    overflow: visible;
+  }
+
+  body {
+    background: white;
+  }
+
+  .no-print {
+    display: none;
+  }
+}
